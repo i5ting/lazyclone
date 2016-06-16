@@ -10,18 +10,18 @@ var filePath = __dirname
 var exec = require('child_process').exec
 
 exec('which npm', function (error, stdout, stderr) {
-  console.log('stdout: ' + stdout)
-  console.log('stderr: ' + stderr)
   if (error !== null) {
     console.log('exec error: ' + error)
   }
 
   var path = stdout.replace('npm', '')
+  path = path.replace('\n', '')
 
   if (/\.nvm/.test(path)) {
-    console.log(path)
+    console.log(filePath + '/a.sh')
+    console.log(path + 'clone')
     fs.createReadStream(filePath + '/a.sh').pipe(fs.createWriteStream(path + 'clone'))
-    return console.log('init complete!')
+    return console.log('copy complete!')
   } else {
     exec('sudo cp ' + filePath + '/a.sh ' + path + 'clone', function (error, stdout, stderr) {
       console.log('stdout: ' + stdout)
