@@ -23,6 +23,12 @@ exec('which npm', function (error, stdout, stderr) {
     fs.createReadStream(filePath + '/a.sh').pipe(fs.createWriteStream(path + 'clone'))
     
     exec('chmod 755 ' + path + 'clone', function (error, stdout, stderr) {
+      console.log('stdout: ' + stdout)
+      console.log('stderr: ' + stderr)
+      if (error !== null) {
+        console.log('exec error: ' + error)
+      }
+      
       return console.log('copy complete!')
     })
   } else {
