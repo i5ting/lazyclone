@@ -13,3 +13,7 @@ git clone $url $reponame
 cd $reponame
 
 exec $SHELL
+
+if [ ! -d "./package.json" ]; then
+  npm i
+fi
