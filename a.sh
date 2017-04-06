@@ -12,7 +12,7 @@ git clone $url $reponame
 #
 cd $reponame
 
-if [ f "./package.json" ]; then
+if [ -f "./package.json" ]; then
   npm i
 fi
 
