@@ -1,6 +1,6 @@
 {
   "name": "lazyclone",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "lazyclone for git clone",
   "main": "index.js",
   "scripts": {
