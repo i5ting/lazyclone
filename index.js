@@ -18,9 +18,9 @@ exec('which npm', function (error, stdout, stderr) {
   path = path.replace('\n', '')
 
   if (/\.nvm/.test(path)) {
-    console.log(filePath + '/a.sh')
+    console.log(filePath + '/exec.sh')
     console.log(path + 'clone')
-    fs.createReadStream(filePath + '/a.sh').pipe(fs.createWriteStream(path + 'clone'))
+    fs.createReadStream(filePath + '/exec.sh').pipe(fs.createWriteStream(path + 'clone'))
     
     exec('chmod 755 ' + path + 'clone', function (error, stdout, stderr) {
       console.log('stdout: ' + stdout)
@@ -32,7 +32,7 @@ exec('which npm', function (error, stdout, stderr) {
       return console.log('copy complete!')
     })
   } else {
-    exec('sudo cp ' + filePath + '/a.sh ' + path + 'clone', function (error, stdout, stderr) {
+    exec('sudo cp ' + filePath + '/exec.sh ' + path + 'clone', function (error, stdout, stderr) {
       console.log('stdout: ' + stdout)
       console.log('stderr: ' + stderr)
       if (error !== null) {
